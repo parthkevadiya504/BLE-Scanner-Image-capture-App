@@ -47,15 +47,15 @@ class _MainPageState extends State<MainPage> {
     // Decode the image data
     final decodedImage = await decodeImageFromList(imageBytes);
 
-    // Resize the image
-    final resizedImage = await resizeImage(decodedImage, 250, 250);
-
-    // Encode the resized image back to bytes
-    final resizedBytes = await resizedImage.toByteData(format: imageBytes);
-
-    try {
-      await file.writeAsBytes(resizedBytes!.buffer.asUint8List());
-    } catch (_) {}
+    // // Resize the image
+    // final resizedImage = await resizeImage();
+    //
+    // // Encode the resized image back to bytes
+    // final resizedBytes = await resizedImage.toByteData(format: imageBytes);
+    //
+    // try {
+    //   await file.writeAsBytes(resizedBytes!.buffer.asUint8List());
+    // } catch (_) {}
 
     return file;
   }
